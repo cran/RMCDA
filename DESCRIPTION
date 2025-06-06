@@ -1,0 +1,27 @@
+Package: RMCDA
+Title: Multi-Criteria Decision Analysis
+Version: 0.3
+Authors@R: 
+   c(
+     person(
+       given  = "Annice",
+       family = "Najafi",
+       email  = "annicenajafi27@gmail.com",
+       role   = c("aut", "cre")
+     )
+   )
+Description: Supporting decision making involving multiple criteria. Annice Najafi, Shokoufeh Mirzaei (2025) RMCDA: The Comprehensive R Library for applying multi-criteria decision analysis methods, Volume 24, e100762 <doi:10.1016/j.simpa.2025.100762>.
+License: MIT + file LICENSE
+Encoding: UTF-8
+RoxygenNote: 7.2.3
+Imports: dplyr, stats, igraph, fmsb, lpSolve, matlib, nloptr,
+        matrixStats, pracma
+Suggests: testthat (>= 3.0.0), knitr, rmarkdown
+Config/testthat/edition: 3
+VignetteBuilder: knitr
+NeedsCompilation: no
+Packaged: 2025-06-04 19:21:38 UTC; annicenajafi
+Author: Annice Najafi [aut, cre]
+Maintainer: Annice Najafi <annicenajafi27@gmail.com>
+Repository: CRAN
+Date/Publication: 2025-06-06 13:20:09 UTC
