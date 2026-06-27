@@ -22,7 +22,7 @@
 #'
 #' # Get MACBETH scores
 #' res <- apply.MACBETH(mat, benef.vec, wts)
-#'
+#' print(res)
 #'
 #' @export apply.MACBETH
 apply.MACBETH <- function(mat,
@@ -63,7 +63,7 @@ apply.MACBETH <- function(mat,
   }
 
 
-  X <- X * weights
+  X <- t(t(X) * weights)
 
 
   V <- rowSums(X)

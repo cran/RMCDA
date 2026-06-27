@@ -33,7 +33,7 @@
 #'
 #' # Apply OPA
 #' weights <- apply.OPA(expert.opinion.lst, expert.rank, criterion.rank.lst)
-#'
+#' print(weights)
 #' @import lpSolve
 #' @export apply.OPA
 apply.OPA <- function(expert.opinion.lst, expert.rank, criterion.rank.lst){

@@ -26,7 +26,7 @@
 #'
 #' # Apply SPOTIS
 #' preferences <- apply.SPOTIS(matrix, weights, types, bounds)
-#'
+#' print(round(preferences, 4))
 #' @export apply.SPOTIS
 apply.SPOTIS <- function(matrix, weights, types, bounds) {
 
@@ -51,9 +51,9 @@ apply.SPOTIS <- function(matrix, weights, types, bounds) {
   isp <- bounds[cbind(1:ncol(matrix), (types + 1) / 2 + 1)]
 
   #Normalized distances matrix
-  norm_distances <- abs((matrix - isp) / (bounds[, 1] - bounds[, 2]))
+  norm_distances <- abs(t((t(matrix) - isp) / (bounds[, 1] - bounds[, 2])))
 
-  preference_scores <- rowSums(norm_distances * weights)
+  preference_scores <- rowSums(t(t(norm_distances) * weights))
 
   return(preference_scores)
 }
@@ -74,7 +74,7 @@ apply.SPOTIS <- function(matrix, weights, types, bounds) {
 #'
 #' # Generate bounds
 #' bounds <- generate.SPOTIS.bounds(matrix)
-#'
+#' print(bounds)
 generate.SPOTIS.bounds <- function(matrix) {
   if (!is.matrix(matrix) && !is.data.frame(matrix)) {
     stop("The decision matrix must be a numeric matrix or data frame.")

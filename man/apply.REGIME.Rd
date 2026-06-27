@@ -75,9 +75,11 @@ wts <- c(0.6, 0.4)
 
 # Call apply.REGIME without partial-order
 regime.out <- apply.REGIME(mat, benef.vec, wts, doPreOrder = FALSE)
-
+print(regime.out)
 
 # Or with partial-order
 regime.out2 <- apply.REGIME(mat, benef.vec, wts, doPreOrder = TRUE)
+print(regime.out2$cp.matrix)
+print(regime.out2$po.result)
 
 }

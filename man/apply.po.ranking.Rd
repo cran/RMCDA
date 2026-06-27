@@ -42,5 +42,8 @@ po_str <- matrix(c("P+", "P+", "R",
 # Apply the pre-order ranking
 res <- apply.po.ranking(po_str)
 
+# View partial-order matrix and sorted alternatives
+print(res$partial.order.mat)
+print(res$alts_rank)
 
 }

@@ -1,6 +1,6 @@
 #' Plot decision tree
 #'
-#' @param A the comparison matrix
+#' @param x the comparison matrix
 #' @param comparing.competitors the list of matrices related to pairwise comparisons of competitors for each criteria
 #' @param results results of running AHP on data
 #' @param vertex_font font of text on vertex
@@ -8,6 +8,7 @@
 #' @param asp aspect ratio of the graph
 #' @param max_width maximum width
 #' @param vertex_size vertex size
+#' @param ... further arguments passed to or from other methods
 #'
 #' @return the decision tree plot
 #' @importFrom igraph graph_from_edgelist E E<- layout_as_tree
@@ -16,23 +17,23 @@
 #' @importFrom stats   cor optim runif sd
 #' @importFrom utils   combn
 #' @importFrom fmsb    radarchart
-#' @export AHP.decision.tree.plot
-AHP.decision.tree.plot <- function(A, comparing.competitors, results, vertex_font=1.2, edge_font = 1,
-                                   asp = 0.8, max_width = 5, vertex_size=50){
+#' @export
+plot.AHP.decision.tree <- function(x, comparing.competitors, results, vertex_font=1.2, edge_font = 1,
+                                   asp = 0.8, max_width = 5, vertex_size=50, ...){
 
-  nodes <- c("Choose alternative",rownames(comparing.competitors[[1]]), rownames(A))
+  nodes <- c("Choose alternative",rownames(comparing.competitors[[1]]), rownames(x))
 
   edges <- c()
 
 
-  for(idx in seq(1, length(rownames(A)), 1)){
+  for(idx in seq(1, length(rownames(x)), 1)){
     edges <- c(edges, "Choose alternative")
-    edges <- c(edges, rownames(A)[idx])
+    edges <- c(edges, rownames(x)[idx])
   }
 
   for(idx in seq(1,length(rownames(comparing.competitors[[1]])), 1)){
-    for(idx.prod in seq(1, length(rownames(A)), 1)){
-      edges <- c(edges, rownames(A)[idx.prod])
+    for(idx.prod in seq(1, length(rownames(x)), 1)){
+      edges <- c(edges, rownames(x)[idx.prod])
       edges <- c(edges, rownames(comparing.competitors[[1]])[idx])
     }
   }

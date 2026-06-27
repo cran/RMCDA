@@ -1,16 +1,17 @@
 #' Plot spider plot
 #'
-#' @param data the result of MCDA scores
+#' @param x the result of MCDA scores
 #' @param colors the color scheme of choice
+#' @param ... further arguments passed to or from other methods
 #'
 #' @return the spider plot
 #' @importFrom grDevices palette
 #' @importFrom fmsb radarchart
 #' @importFrom graphics legend
-#' @export spider.plot
-spider.plot <- function(data, colors=palette("default")){
+#' @export
+plot.spider <- function(x, colors=palette("default"), ...){
 
-  as.data.frame(data)->data
+  data <- as.data.frame(x)
   rownames(data)->criteria
   data <- rbind(rep(1, ncol(data)), rep(0, ncol(data)), data)
 

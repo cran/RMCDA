@@ -44,5 +44,5 @@ criterion.rank.lst <- list(criterion.x.rank, criterion.y.rank)
 
 # Apply OPA
 weights <- apply.OPA(expert.opinion.lst, expert.rank, criterion.rank.lst)
-
+print(weights)
 }

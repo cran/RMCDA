@@ -626,7 +626,7 @@ utilize this R package for your specific data.</p>
 ## Ease of cleaning                  1
 ## 
 ## [[2]]
-## [[2]][[1]]
+## [[2]]$`Material quality`
 ##                          Our company - vent clamp Diaclara vent clamp
 ## Our company - vent clamp                     1.00                1.00
 ## Diaclara vent clamp                          1.00                1.00
@@ -638,7 +638,7 @@ utilize this R package for your specific data.</p>
 ## Lisen vent magnetic                        1                1
 ## APPS2 cup holder                           1                1
 ## 
-## [[2]][[2]]
+## [[2]]$`Fatigue resistance`
 ##                          Our company - vent clamp Diaclara vent clamp
 ## Our company - vent clamp                      1.0                0.50
 ## Diaclara vent clamp                           2.0                1.00
@@ -650,7 +650,7 @@ utilize this R package for your specific data.</p>
 ## Lisen vent magnetic                      1.0                2
 ## APPS2 cup holder                         0.5                1
 ## 
-## [[2]][[3]]
+## [[2]]$`Protective coating`
 ##                          Our company - vent clamp Diaclara vent clamp
 ## Our company - vent clamp                     1.00                 2.0
 ## Diaclara vent clamp                          0.50                 1.0
@@ -662,7 +662,7 @@ utilize this R package for your specific data.</p>
 ## Lisen vent magnetic                      1.0                2
 ## APPS2 cup holder                         0.5                1
 ## 
-## [[2]][[4]]
+## [[2]]$`Ease of cleaning`
 ##                          Our company - vent clamp Diaclara vent clamp
 ## Our company - vent clamp                     1.00                 2.0
 ## Diaclara vent clamp                          0.50                 1.0
@@ -680,11 +680,11 @@ matrices are pairwise comparisons of alternatives for each criteria.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>mat.lst[[<span class="dv">1</span>]]<span class="ot">-&gt;</span>A</span>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>mat.lst[[<span class="dv">2</span>]]<span class="ot">-&gt;</span>comparing.competitors</span>
 <span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>results<span class="ot">&lt;-</span> <span class="fu">apply.AHP</span>(A, comparing.competitors)</span></code></pre></div>
-<pre><code>## No serious inconsistencies detected.
-## No serious inconsistencies detected.
-## No serious inconsistencies detected.
-## No serious inconsistencies detected.
-## No serious inconsistencies detected.</code></pre>
+<pre><code>## [1] &quot;No serious inconsistencies detected.&quot;
+## [1] &quot;No serious inconsistencies detected.&quot;
+## [1] &quot;No serious inconsistencies detected.&quot;
+## [1] &quot;No serious inconsistencies detected.&quot;
+## [1] &quot;No serious inconsistencies detected.&quot;</code></pre>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">print</span>(results)</span></code></pre></div>
 <pre><code>## [[1]]
 ## [[1]][[1]]

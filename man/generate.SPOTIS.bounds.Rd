@@ -25,5 +25,5 @@ matrix <- matrix(c(96, 145, 200,
 
 # Generate bounds
 bounds <- generate.SPOTIS.bounds(matrix)
-
+print(bounds)
 }

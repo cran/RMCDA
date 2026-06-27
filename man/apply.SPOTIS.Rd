@@ -41,5 +41,5 @@ types <- c(1, -1, 1)
 
 # Apply SPOTIS
 preferences <- apply.SPOTIS(matrix, weights, types, bounds)
-
+print(round(preferences, 4))
 }
